@@ -15,9 +15,9 @@ private:
 
 protected:
 
-	Object() { }
+	Object();
 
-	virtual ~Object() { }
+	virtual ~Object();
 
 	virtual void Initialize() = 0;
 
