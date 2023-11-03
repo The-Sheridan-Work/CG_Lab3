@@ -26,3 +26,8 @@ void Sprite::Destroy()
 	std::cout << "Sprite Destroy()" << GetName() << std::endl;
 }
 
+void Sprite::Render()
+{
+	std::cout << "Sprite Render()" << GetName() << std::endl;
+}
+

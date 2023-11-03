@@ -31,7 +31,7 @@ protected:
 
 public:
 
-    virtual void Load(); override;
+    virtual void Load() override;
 
     Component* CreateComponent(std::string CompType);
 
