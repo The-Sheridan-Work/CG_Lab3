@@ -1,6 +1,8 @@
 #include "Time.h"
 #include <iostream>
 
+Time* Time::instance = nullptr;
+
 void Time::Initialize()
 {
 	std::cout << "Time Initialize()" << std::endl;

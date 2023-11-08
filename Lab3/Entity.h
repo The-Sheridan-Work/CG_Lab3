@@ -25,7 +25,7 @@ protected:
 
     virtual void Initialize() override;
 
-    virtual void Update() override;
+    virtual void Update();
 
     virtual void Destroy() override;
 

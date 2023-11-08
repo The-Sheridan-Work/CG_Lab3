@@ -20,25 +20,23 @@ void SceneManager::AddScene(Scene* scene)
 
 void SceneManager::RemoveScene(Scene* scene)
 {
-	for (int i = 0; i < scenes.size(); i++)
+	for (Scene* s : scenes)
 	{
-		if (scenes[i] == scene)
+		if (s == scene)
 			scenes.remove(scene);
 	}
 }
 
 Entity* SceneManager::CreateEntity()
 {
-	Entity* e = new Entity();
-	activeScene->entities.push_back(e);
-	return e;
+	return activeScene->CreateEntity();
 }
 
 void SceneManager::RemoveEntity(Entity* entity)
 {
-	for (int i = 0; i < activeScene->entities.size(); i++)
+	for (Entity* e : activeScene->entities)
 	{
-		if (activeScene->entities[i] == entity)
+		if (e == entity)
 		{
 			activeScene->entities.remove(entity);
 			//#TODO Possibly Delete?
@@ -48,11 +46,11 @@ void SceneManager::RemoveEntity(Entity* entity)
 
 Entity* SceneManager::FindEntityById(int id)
 {
-	for (int i = 0; i < activeScene->entities.size(); i++)
+	for (Entity* e : activeScene->entities)
 	{
-		if (activeScene->entities[i]->GetId() == id)
+		if (e->GetId() == id)
 		{
-			return activeScene->entities[i];
+			return e;
 		}
 	}
 	return nullptr;

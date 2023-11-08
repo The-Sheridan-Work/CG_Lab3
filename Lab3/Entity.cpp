@@ -4,7 +4,7 @@
 
 Entity::Entity()
 {
-	std::cout << "Entity Constructor" << std::end;
+	std::cout << "Entity Constructor" << std::endl;
 }
 
 Entity::~Entity()
@@ -44,9 +44,9 @@ void Entity::RemoveComponent(Component* component)
 {
 	std::cout << "Entity Remove Component " << component->GetName() << std::endl;
 
-	for (int i = 0; i < components.size(); i++)
+	for (Component* c : components)
 	{
-		if (components[i] == component)
+		if (c == component)
 		{
 			components.remove(component);
 		}

@@ -18,9 +18,9 @@ void AssetManager::AddAsset(Asset* newAsset)
 
 void AssetManager::RemoveAsset(Asset* asset)
 {
-	for (int i = 0; i < assets.size(); i++)
+	for (Asset* a : assets)
 	{
-		if (assets[i] == asset)
+		if (a == asset)
 			assets.remove(asset);
 	}
 }

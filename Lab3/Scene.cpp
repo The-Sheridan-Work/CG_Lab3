@@ -41,23 +41,20 @@ Entity* Scene::CreateEntity()
 
 void Scene::RemoveEntity(Entity* entity)
 {
-	for (int i = 0; i < entities.size(); i++)
+	for (Entity* e : entities)
 	{
-		if (entities[i] == entity)
-		{
-			entities.remove(entity);
-			//#TODO Possibly Delete?
-		}
+		if (e == entity)
+			entities.remove(e);
 	}
 }
 
 Entity* Scene::FindEntityById(int id)
 {
-	for (int i = 0; i < entities.size(); i++)
+	for (Entity* e : entities)
 	{
-		if (entities[i]->GetId() == id)
+		if (e->GetId() == id)
 		{
-			return entities[i];
+			return e;
 		}
 	}
 	return nullptr;

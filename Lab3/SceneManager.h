@@ -2,7 +2,10 @@
 #ifndef _SM_H_
 #define _SM_H_
 
+#include <list>
+
 class Scene;
+class Entity;
 
 class SceneManager
 {
