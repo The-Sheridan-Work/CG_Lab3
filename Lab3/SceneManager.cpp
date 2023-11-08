@@ -3,6 +3,8 @@
 #include "Scene.h"
 #include<iostream>
 
+SceneManager* SceneManager::instance = nullptr;
+
 void SceneManager::Initialize()
 {
 	std::cout << "SceneManager Initialize()" << std::endl;

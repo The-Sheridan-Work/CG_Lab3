@@ -1,6 +1,8 @@
 #include "AssetManager.h"
 #include <iostream>
 
+AssetManager* AssetManager::instance = nullptr;
+
 void AssetManager::Initialize()
 {
 	std::cout << "AssetManager Initialize()" << std::endl;
