@@ -19,6 +19,7 @@ void Component::Initialize()
 void Component::Destroy()
 {
 	std::cout << "Component Destroy()" << GetName() << std::endl;
+	delete(this);
 }
 
 void Component::Update()

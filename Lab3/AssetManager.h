@@ -19,15 +19,8 @@ public:
 		return *instance;
 	}
 
-	inline void Destroy()
-	{
-		if (instance != nullptr)
-		{
-			delete instance;
-			instance = nullptr;
-		}
-	}
-
+	void Destroy();
+	
 	void Initialize();
 
 	void Update();
@@ -42,8 +35,8 @@ private:
 
 	static AssetManager* instance;
 
-	inline AssetManager() = default;
-	inline ~AssetManager() = default;
+	AssetManager();
+	~AssetManager();
 	inline explicit AssetManager(AssetManager const&) = delete;
 	inline AssetManager& operator=(AssetManager const&) = delete;
 };

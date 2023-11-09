@@ -15,3 +15,13 @@ void Asset::Load()
 {
 	std::cout << "Asset Load" << std::endl;
 }
+
+void Asset::Initialize()
+{
+	std::cout << "Asset Initialize()" << std::endl;
+}
+
+void Asset::Destroy()
+{
+	std::cout << "Asset Destroy" << std::endl;
+}

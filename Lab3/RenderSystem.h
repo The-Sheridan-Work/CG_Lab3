@@ -17,10 +17,13 @@ private:
 	int height;
 	bool bFullscreen;
 
+	class SDL_Window* window = nullptr;
+	class SDL_Renderer* renderer = nullptr;
+
 	static RenderSystem* instance;
 
-	inline RenderSystem() = default;
-	inline ~RenderSystem() = default;
+	RenderSystem();
+	~RenderSystem();
 	inline explicit RenderSystem(RenderSystem const&) = delete;
 	inline RenderSystem& operator=(RenderSystem const&) = delete;
 
@@ -35,15 +38,8 @@ public:
 		return *instance;
 	}
 
-	inline void Destroy()
-	{
-		if (instance != nullptr)
-		{
-			delete instance;
-			instance = nullptr;
-		}
-	}
-
+	void Destroy();
+	
 	void Initialize();
 
 	void Load();

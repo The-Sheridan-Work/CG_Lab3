@@ -17,14 +17,8 @@ public:
 		return *instance;
 	}
 
-	inline void Destroy()
-	{
-		if (instance != nullptr)
-		{
-			delete instance;
-			instance = nullptr;
-		}
-	}
+	void Destroy();
+	
 
 	void Initialize();
 
@@ -36,8 +30,8 @@ private:
 
 	static InputManager* instance;
 
-	inline InputManager() = default;
-	inline ~InputManager() = default;
+	InputManager();
+	~InputManager();
 	inline explicit InputManager(InputManager const&) = delete;
 	inline InputManager& operator=(InputManager const&) = delete;
 

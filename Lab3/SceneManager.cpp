@@ -5,6 +5,7 @@
 
 SceneManager* SceneManager::instance = nullptr;
 
+
 void SceneManager::Initialize()
 {
 	std::cout << "SceneManager Initialize()" << std::endl;
@@ -56,4 +57,21 @@ Entity* SceneManager::FindEntityById(int id)
 		}
 	}
 	return nullptr;
+}
+
+void SceneManager::Destroy()
+{
+	std::cout << "SceneManager Destroy()" << std::endl;
+
+	for (Scene* s : scenes)
+	{
+		s->Destroy();
+	}
+	scenes.clear();
+
+	if (instance != nullptr)
+	{
+		delete instance;
+		instance = nullptr;
+	}
 }

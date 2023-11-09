@@ -20,14 +20,8 @@ public:
 		return *instance;
 	}
 
-	inline void Destroy()
-	{
-		if (instance != nullptr)
-		{
-			delete instance;
-			instance = nullptr;
-		}
-	}
+	void Destroy();
+	
 
 	void Initialize();
 

@@ -27,3 +27,28 @@ void AssetManager::RemoveAsset(Asset* asset)
 	}
 }
 
+AssetManager::AssetManager()
+{
+	std::cout << "AssetManager Constructor" << std::endl;
+}
+
+AssetManager::~AssetManager()
+{
+	std::cout << "AssetManager Destructor" << std::endl;
+}
+
+void AssetManager::Destroy()
+{
+	for (Asset* a : assets)
+	{
+		Asset* assetToDelete = a;
+		delete(assetToDelete);
+	}
+	assets.clear();
+
+	if (instance != nullptr)
+	{
+		delete instance;
+		instance = nullptr;
+	}
+}

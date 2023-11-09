@@ -4,6 +4,7 @@
 
 int main()
 {
+	Engine::Instance().Load();
 	Engine::Instance().Initialize();
 	Engine::Instance().Update();
 	Engine::Instance().Destroy();

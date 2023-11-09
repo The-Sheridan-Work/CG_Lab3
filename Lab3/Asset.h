@@ -15,6 +15,10 @@ public:
     virtual ~Asset() override;
 
     virtual void Load() override;
+
+    virtual void Initialize() override;
+
+    virtual void Destroy() override;
 };
 
 #endif // ! _ASS_H_

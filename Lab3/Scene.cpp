@@ -29,7 +29,14 @@ void Scene::Update()
 
 void Scene::Destroy()
 {
+	for (Entity* e : entities)
+	{
+		e->Destroy();
+	}
+	entities.clear();
+
 	std::cout << "Scene Destroy()" << std::endl;
+	delete(this);
 }
 
 Entity* Scene::CreateEntity()

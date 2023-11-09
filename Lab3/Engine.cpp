@@ -19,7 +19,6 @@ void Engine::Initialize()
 	RenderSystem::Instance().Initialize();
 	SceneManager::Instance().Initialize();
 
-
 }
 
 void Engine::Load()
@@ -39,4 +38,20 @@ void Engine::Update()
 	InputManager::Instance().Update();
 	RenderSystem::Instance().Update();
 	SceneManager::Instance().Update();
+}
+
+void Engine::Destroy()
+{
+	Time::Instance().Destroy();
+
+	AssetManager::Instance().Destroy();
+	InputManager::Instance().Destroy();
+	RenderSystem::Instance().Destroy();
+	SceneManager::Instance().Destroy();
+
+	if (instance != nullptr)
+	{
+		delete instance;
+		instance = nullptr;
+	}
 }

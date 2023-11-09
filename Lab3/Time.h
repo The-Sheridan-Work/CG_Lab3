@@ -16,8 +16,8 @@ private:
 
 	static Time* instance;
 
-	inline Time() = default;
-	inline ~Time() = default;
+	Time();
+	~Time();
 	inline explicit Time(Time const&) = delete;
 	inline Time& operator=(Time const&) = delete;
 

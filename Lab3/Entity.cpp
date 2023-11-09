@@ -24,7 +24,13 @@ void Entity::Update()
 
 void Entity::Destroy()
 {
+	for (Component* c : components)
+	{
+		c->Destroy();
+	}
+
 	std::cout << "Entity Destroy()" << std::endl;
+	delete(this);
 }
 
 void Entity::Load()
