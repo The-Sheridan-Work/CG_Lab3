@@ -9,11 +9,19 @@ SceneManager* SceneManager::instance = nullptr;
 void SceneManager::Initialize()
 {
 	std::cout << "SceneManager Initialize()" << std::endl;
+	for (Scene* s : scenes)
+	{
+		s->Initialize();
+	}
 }
 
 void SceneManager::Update()
 {
 	std::cout << "SceneManager Update()" << std::endl;
+	for (Scene* s : scenes)
+	{
+		s->Update();
+	}
 }
 
 void SceneManager::AddScene(Scene* scene)

@@ -20,15 +20,17 @@ void RenderSystem::Initialize()
 {
 	std::cout << "Render System Initialize()" << std::endl;
 
-	json::JSON document = JsonHelper::OpenFile("RenderSettings.h");
+	json::JSON document = JsonHelper::OpenFile("RenderSystem.json");
 
 	if (!document.IsNull())
 	{
 		name = JsonHelper::GetValue(document, "name").ToString();
 		width = JsonHelper::GetValue(document, "width").ToInt();
-		height = JsonHelper::GetValue(document, "hieght").ToInt();
+		height = JsonHelper::GetValue(document, "height").ToInt();
 		bFullscreen = JsonHelper::GetValue(document, "fullscreen").ToBool();
 	}
+
+	std::cout << "Window: " << name << " " << width << " " << height << " " << bFullscreen << std::endl;
 
 	window = SDL_CreateWindow(name.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, bFullscreen ? 1 : 0);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);

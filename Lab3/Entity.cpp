@@ -15,11 +15,19 @@ Entity::~Entity()
 void Entity::Initialize()
 {
 	std::cout << "Entity Initialize()" << std::endl;
+	for (Component* c : components)
+	{
+		c->Initialize();
+	}
 }
 
 void Entity::Update()
 {
 	std::cout << "Entity Update()" << std::endl;
+	for (Component* c : components)
+	{
+		c->Update();
+	}
 }
 
 void Entity::Destroy()

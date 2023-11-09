@@ -15,6 +15,10 @@ Scene::~Scene()
 void Scene::Initialize()
 {
 	std::cout << "Scene Initialize()" << std::endl;
+	for (Entity* e : entities)
+	{
+		e->Initialize();
+	}
 }
 
 void Scene::Load(std::string fName)
@@ -25,6 +29,10 @@ void Scene::Load(std::string fName)
 void Scene::Update()
 {
 	std::cout << "Scene Update()" << std::endl;
+	for (Entity* e : entities)
+	{
+		e->Update();
+	}
 }
 
 void Scene::Destroy()
